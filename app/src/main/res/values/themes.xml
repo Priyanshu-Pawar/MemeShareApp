@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MemeShare" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#52AEF7</item>
+        //Notification bar status
+        <item name="colorPrimaryVariant">#2E96E9</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">#000000</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SCREEN">
+        <item name="android:textColor">#FFFF</item>
+    </style>
+
+    <style name="TOP">
+        <item name="android:background">@color/teal_200</item>
+        <item name="android:textColor">#FFFF</item>
+    </style>
+
+    <style name="BUTTON1">
+        <item name="backgroundTint">#00BCD4</item>
+        <item name="android:textColor">#FFFF</item>
+    </style>
+
+    <style name="BUTTON2">
+        <item name="backgroundTint">#B68DE8</item>
+        <item name="android:textColor">#FFFF</item>
+    </style>
+</resources>
