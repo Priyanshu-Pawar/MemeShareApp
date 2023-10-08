@@ -21,6 +21,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
@@ -52,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
             switcher.setChecked(true);
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
-
+        else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
         switcher.setOnClickListener(view -> {
             if(nightMode){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -76,15 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-//        String url = "https://meme-api.herokuapp.com/gimme";
-          String url = "https://healthruwords.p.rapidapi.com/v1/quotes/";
+           String url = "https://meme-api.com/gimme";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, response -> {
                     try {
-                     currUrl =  response.getString("url");
-                      ImageView imageView = (ImageView) findViewById(R.id.memeImageView);
-
+                        currUrl = response.getString("url");
+                        ImageView imageView = (ImageView) findViewById(R.id.memeImageView);
                         Glide.with(MainActivity.this).load(currUrl).listener(new RequestListener<Drawable>() {
 
                             @Override
